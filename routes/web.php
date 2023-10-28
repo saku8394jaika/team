@@ -22,6 +22,8 @@ Route::group(['middleware' => ['auth']], function(){
     Route::put('/posts/{post}',  [PostController::class, 'update']);
     Route::delete('/posts/{post}',  [PostController::class, 'delete']);
     Route::get('/posts/{post}/edit',  [PostController::class, 'edit']);
+    // Route::get('/sample', [PostController::class, 'sample']);
+    // Route::post('/sample', [PostController::class, 'sampleStore']);
 });
 
 Route::get('/dashboard', function () {

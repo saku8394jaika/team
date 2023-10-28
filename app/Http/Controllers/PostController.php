@@ -41,5 +41,15 @@ class PostController extends Controller
 
         return redirect('/posts/' . $post->id);
     }
+    
+    public function sample()
+    {
+        return view("posts.sample");
+    }
+    
+    public function sampleStore(Request $request)
+    {
+        return $request;
+    }
 
 }
