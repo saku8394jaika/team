@@ -11,7 +11,4 @@
             </div>
         @endforeach
     </div>
-    <div>
-        {{ $posts->links() }}
-    </div>
 </x-app-layout>
