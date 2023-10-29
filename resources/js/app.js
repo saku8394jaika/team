@@ -1,3 +1,4 @@
+import './like';
 import './camera';
 import './bootstrap';
 

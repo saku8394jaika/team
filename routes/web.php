@@ -23,6 +23,8 @@ Route::group(['middleware' => ['auth']], function(){
     Route::delete('/posts/{post}',  [PostController::class, 'delete']);
     Route::get('/posts/{post}/edit',  [PostController::class, 'edit']);
     Route::post('/post/{post}/comments', [PostController::class, 'comment']);
+    Route::post('/posts/like', [PostController::class, 'like']);
+    Route::post('/posts/unlike', [PostController::class, 'unlike']);
 });
 
 Route::get('/dashboard', function () {

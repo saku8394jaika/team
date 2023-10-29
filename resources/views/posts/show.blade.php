@@ -5,9 +5,13 @@
         <p>本文：{{ $post->body }}</p>
         <img src="{{ $post->image }}" />
     </div>
+    <br>
+    <div>
+        <i class="fa-regular fa-sun fa-2xl {{ $post->isLikedBy(Auth::user()) ? "liked" : "" }}" id="like" data-postId="{{ $post->id }}" data-flg="{{ $post->isLikedBy(Auth::user()) }}"></i>
+        <p id="likeCount">{{ $post->likeCount() }}</p>
+    </div>
     <h2>コメント</h2>
-        @csrf
-         <form action="/post/{{ $post->id }}/comments" method="POST">
+    <form action="/post/{{ $post->id }}/comments" method="POST">
         @csrf
         <textarea name="comments[comment]"></textarea>
         <button type="submit">送信</button>
