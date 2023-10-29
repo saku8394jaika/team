@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\MypageController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +26,7 @@ Route::group(['middleware' => ['auth']], function(){
     Route::post('/post/{post}/comments', [PostController::class, 'comment']);
     Route::post('/posts/like', [PostController::class, 'like']);
     Route::post('/posts/unlike', [PostController::class, 'unlike']);
+    Route::get('/mypage',  [MypageController::class, 'index'])->name('mypage');
 });
 
 Route::get('/dashboard', function () {
