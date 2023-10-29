@@ -14,23 +14,26 @@ let constrains = { video: true, audio: false };
 const startUp = () => {
     videoStart();
     
-    video.addEventListener('canplay', function(e){
-        if(!streaming){
-            height = video.videoHeight / (video.videoWidth/width);
-            
-            video.setAttribute('width', width);
-            video.setAttribute('height', height);
-            canvas.setAttribute('width', width);
-            canvas.setAttribute('height', height);
-            streaming = true;
-        }
-    }, false);
+    if(video){
+        video.addEventListener('canplay', function(e){
+            if(!streaming){
+                height = video.videoHeight / (video.videoWidth/width);
+                
+                video.setAttribute('width', width);
+                video.setAttribute('height', height);
+                canvas.setAttribute('width', width);
+                canvas.setAttribute('height', height);
+                streaming = true;
+            }
+        }, false);
+    };
     
-    startbutton.addEventListener('click', function(e){
-        takepicture();
-        e.preventDefault();
-    }, false);
-    
+    if(startbutton){
+        startbutton.addEventListener('click', function(e){
+            takepicture();
+            e.preventDefault();
+        }, false);
+    }
 };
 
 const videoStart = () => {
