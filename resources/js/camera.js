@@ -63,6 +63,7 @@ const takepicture = () => {
 
 const send = () => {
     const data = canvas.toDataURL('image/png');
+    console.log(data.length);
     document.getElementById("image").value = data;
     startbutton.submit();
     // axios.post('/sample', {

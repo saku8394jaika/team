@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
     public function index(Post $post)
     {
-        return view('posts/index')->with(['posts' => $post->getPaginateByLimit()]);
+        return view('posts/index')->with(['posts' => $post->get()]);
     }
 
     public function show(Post $post)
@@ -25,6 +26,7 @@ class PostController extends Controller
     public function store(Post $post, Request $request)
     {
         $input = $request['post'];
+        $input += ['user_id' => Auth::id()];
         $post->fill($input)->save();
         return redirect('/posts/' . $post->id);
     }
