@@ -15,9 +15,9 @@
         </div>
         <div class="camera">
             <video id="video">Video stream not available.</video>
-        </div><br>
+        </div>
         <input type="hidden" id="image" name="post[image]"/>
-        <button id="startbutton">保存</button><br>
+        <button id="startbutton" class="bg-gray-400 hover:bg-gray-300 text-white rounded px-4 py-2">保存</button><br>
         <canvas id="canvas" class="hidden">
         </canvas>
         <!--<input type="submit" value="保存"/>-->
