@@ -55,4 +55,18 @@ class PostController extends Controller
         return redirect('/posts/'.$post->id);
     }
     
+    public function like(Request $request)
+    {
+        $postId = $request['post'];
+        Auth::user()->like()->attach($postId);
+        return $request;
+    }
+    
+    public function unlike(Request $request)
+    {
+        $postId = $request['post'];
+        Auth::user()->like()->detach($postId);
+        return $request;
+    }
+    
 }

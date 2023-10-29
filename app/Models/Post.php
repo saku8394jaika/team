@@ -35,4 +35,14 @@ class Post extends Model
     {
         return $this->hasmany(Comment::class);
     }
+    
+    public function isLikedBy($user)
+    {
+        return Like::where('user_id', $user->id)->where('post_id', $this->id)->first() !== null;
+    }
+    
+    public function likeCount()
+    {
+        return Like::where('post_id', $this->id)->count();
+    }
 }
