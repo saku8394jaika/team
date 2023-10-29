@@ -1,3 +1,4 @@
+import './camera';
 import './bootstrap';
 
 import Alpine from 'alpinejs';

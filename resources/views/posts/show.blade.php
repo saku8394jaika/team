@@ -1,7 +1,9 @@
 <x-app-layout>
-     <div class='post'>
-        <p>{{ $post->body }}</p>
-        <p>作成者：{{ $post->user->name }}</p>
+    <h1>詳細画面</h1>
+    <div>
+        <p>タイトル：{{ $post->title }}</p>
+        <p>本文：{{ $post->body }}</p>
+        <img src="{{ $post->image }}" />
     </div>
     <h2>コメント</h2>
         @csrf
