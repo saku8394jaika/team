@@ -14,4 +14,9 @@ class MypageController extends Controller
         $likedposts = Auth::user()->like()->get();
         return view('mypages.index')->with(['myposts' => $myposts, 'likedposts' => $likedposts]);
     }
+    
+    public function show( posts $post)
+    {
+        return view('posts.show')->with(['post' => $post]);
+    }
 }

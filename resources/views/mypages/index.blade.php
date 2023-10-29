@@ -4,12 +4,18 @@
     <h2>自分の投稿</h2>
     <ul>
         @foreach($myposts as $post)
-            <li>{{ $post->title }}</li>
+            <li>
+                <a href="/posts/{{$post->id }}">{{$post->title}}</a>
+            </li>
         @endforeach
     </ul>
-    
     <h2>いいねした投稿</h2>
-    @foreach($likedposts as $post)
-        <p>{{ $post->title }}</p>
-    @endforeach
+    <ul>
+        @foreach($likedposts as $post)
+            <li>
+                <a href="/posts/{{$post->id }}">{{$post->title}}</a>
+            </li>
+        @endforeach
+    </ul>
 </x-app-layout>
+
